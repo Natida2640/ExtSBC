@@ -12,6 +12,7 @@
 
         <!--Toolbar-->
         <android.support.v7.widget.Toolbar
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             android:id="@+id/toolbarRegister"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
@@ -42,16 +43,17 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/std_id"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/h3"
                         android:textStyle="bold" />
 
 
                     <!--TextField-->
                     <EditText
+                        android:inputType="number"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:hint="" />
+                        android:hint="xxx 12 digi xxx" />
 
 
                 </LinearLayout>
@@ -68,12 +70,13 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="ID"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/h3"
                         android:textStyle="bold" />
 
 
                     <!--TextField-->
                     <EditText
+                        android:inputType="number"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
@@ -94,16 +97,17 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Password"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/h3"
                         android:textStyle="bold" />
 
 
                     <!--TextField-->
                     <EditText
+                        android:inputType="textPassword"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:hint="xxx 12 digi xxx" />
+                         />
 
 
                 </LinearLayout>
@@ -120,16 +124,17 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Re-Password"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/h3"
                         android:textStyle="bold" />
 
 
                     <!--TextField-->
                     <EditText
+                        android:inputType="textPassword"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:hint="xxx 12 digi xxx" />
+                         />
 
 
                 </LinearLayout>
@@ -146,16 +151,17 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/firstname"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/h3"
                         android:textStyle="bold" />
 
 
                     <!--TextField-->
                     <EditText
+                        android:inputType="text"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:hint="xxx 12 digi xxx" />
+                         />
 
 
                 </LinearLayout>
@@ -172,16 +178,17 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/lastname"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/h3"
                         android:textStyle="bold" />
 
 
                     <!--TextField-->
                     <EditText
+                        android:inputType="text"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:hint="xxx 12 digi xxx" />
+                         />
 
 
                 </LinearLayout>
@@ -198,16 +205,17 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/age"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/h3"
                         android:textStyle="bold" />
 
 
                     <!--TextField-->
                     <EditText
+                        android:inputType="number"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:hint="xxx 12 digi xxx" />
+                         />
 
 
                 </LinearLayout>
@@ -227,7 +235,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/sex"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/h3"
                         android:textStyle="bold" />
 
 
@@ -238,19 +246,11 @@
                         android:orientation="horizontal">
 
                         <RadioButton
+                            android:checked="true"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/male" />
-
-                    </RadioGroup>
-
-                    <RadioGroup
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:orientation="horizontal">
-
                         <RadioButton
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -258,6 +258,8 @@
                             android:text="@string/female" />
 
                     </RadioGroup>
+
+
 
 
                 </LinearLayout>
@@ -278,7 +280,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Date Birth"
-                    android:textSize="18sp"
+                    android:textSize="@dimen/h3"
                     android:textStyle="bold" />
 
                     <TextView
@@ -313,17 +315,19 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/address"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/h3"
                         android:textStyle="bold" />
 
 
                     <!--TextField-->
                     <EditText
+                        android:inputType="text"
+                        android:layout_gravity="top"
                         android:lines="4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:hint="xxx 12 digi xxx" />
+                         />
 
 
                 </LinearLayout>
@@ -347,6 +351,7 @@
 
                     <!--TextField-->
                     <Spinner
+                        android:id="@+id/spinnerDivision"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2" />

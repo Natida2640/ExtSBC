@@ -14,4 +14,7 @@
     <string name="female">หญิง</string>
     <string name="address">ที่อยู่</string>
 
+    <string name="register">ลงทะเบียน</string>
+    <string name="message_have_space">กรุณากรอกให้ครบทุกช่อง</string>
+
 </resources>
