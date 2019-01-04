@@ -9,5 +9,9 @@
     <string name="firstname">ชื่อ</string>
     <string name="lastname">นามสกุล</string>
     <string name="age">อายุ</string>
+    <string name="sex">เพศ</string>
+    <string name="male">ชาย</string>
+    <string name="female">หญิง</string>
+    <string name="address">ที่อยู่</string>
 
 </resources>
