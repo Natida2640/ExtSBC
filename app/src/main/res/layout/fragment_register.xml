@@ -226,7 +226,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text=""
+                        android:text="@string/sex"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -241,7 +241,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Male" />
+                            android:text="@string/male" />
 
                     </RadioGroup>
 
@@ -255,12 +255,112 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Female" />
+                            android:text="@string/female" />
 
                     </RadioGroup>
 
 
                 </LinearLayout>
+
+
+
+                <!--Date Birth-->
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                <!--Title-->
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Date Birth"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                    <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="dd-mm-yyyy"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                    <Button
+                        android:text="Set"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+
+                <!--address-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <!--Title-->
+                    <TextView
+                        android:layout_gravity="start"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/address"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+
+                    <!--TextField-->
+                    <EditText
+                        android:lines="4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:hint="xxx 12 digi xxx" />
+
+
+                </LinearLayout>
+
+                <!--Spinner-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <!--Title-->
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Text"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+
+                    <!--TextField-->
+                    <Spinner
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2" />
+
+
+                </LinearLayout>
+
+
+
+
+
+
+
+
             </LinearLayout>
 
         </ScrollView>
