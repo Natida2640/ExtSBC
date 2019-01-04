@@ -13,6 +13,11 @@
     <string name="male">ชาย</string>
     <string name="female">หญิง</string>
     <string name="address">ที่อยู่</string>
+    <string name="cl">ระดับชั้น</string>
+    <string name="faculty">คณะ</string>
+    <string name="branch">สาขา</string>
+    <string name="tel">เบอร์โทร</string>
+
 
     <string name="register">ลงทะเบียน</string>
     <string name="message_have_space">กรุณากรอกให้ครบทุกช่อง</string>
