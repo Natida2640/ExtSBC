@@ -26,11 +26,11 @@ public class MainFragment extends Fragment {
 
 //        Register Controller
         TextView textView = getView().findViewById(R.id.textRegister);
-        textView.setOnClickListener(new View.OnClickListener() {
+        textView.  setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 //                Replace Fragment
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentMainFragment,new RegisterFragment()).addToBackStack(null).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentMainFragment, new RegisterFragment()).addToBackStack(null).commit();
 
             }
         });

@@ -17,6 +17,11 @@
     <string name="faculty">คณะ</string>
     <string name="branch">สาขา</string>
     <string name="tel">เบอร์โทร</string>
+    <string name="confirm">ยืนยันการลงทะเบียน</string>
+    <string name="message">ประกาศข่าวสาร</string>
+    <string name="calendar">ปฏิทินกิจกรรม</string>
+    <string name="event">ลงทะเบียนเข้ากิจกรรม</string>
+    <string name="investigate">เช็คการเข้าร่วมกิจกรรม</string>
 
 
     <string name="register">ลงทะเบียน</string>
