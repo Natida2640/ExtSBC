@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 
 /**
@@ -22,6 +23,7 @@ import android.widget.Spinner;
 public class RegisterFragment extends Fragment {
 
     private String genderString, dateString, levelString, divisionString, sectionString;
+    private boolean genderABoolean = true;
 
 
     public RegisterFragment() {
@@ -39,7 +41,29 @@ public class RegisterFragment extends Fragment {
 //        Create Division
         createDivision();
 
+//        Gender Controller
+        genderController();
+
+
     }   //Main Method
+
+    private void genderController() {
+        RadioGroup radioGroup = getView().findViewById(R.id.radGender);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                genderABoolean = false;
+                switch (checkedId) {
+                    case R.id.radMail:
+                        genderString = "Male";
+                        break;
+                    case R.id.radFemail:
+                        genderString = "Female";
+                        break;
+                }
+            }
+        });
+    }
 
     private void createDivision() {
 
@@ -102,6 +126,8 @@ public class RegisterFragment extends Fragment {
                     phone.isEmpty()) {
 //                Have Space
                 showAlert("Have Space", "Please Fill All Blank");
+            } else if (genderABoolean) {
+                showAlert("Choose Gender ?", "Please Choose Gender Male or Female");
             } else {
 
             }
