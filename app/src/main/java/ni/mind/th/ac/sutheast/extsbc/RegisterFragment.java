@@ -4,6 +4,7 @@ package ni.mind.th.ac.sutheast.extsbc;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
@@ -13,9 +14,16 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -38,14 +46,59 @@ public class RegisterFragment extends Fragment {
 //        Create Toolber
         createToolber();
 
+//        Level Controller
+        levelController();
+
 //        Create Division
         createDivision();
+
+//        Create Section
+        createSection();
 
 //        Gender Controller
         genderController();
 
 
     }   //Main Method
+
+    private void createSection() {
+        final String[] strings = new String[]{"Section1", "Section2", "Section3", "Section่4",};
+        Spinner spinner = getView().findViewById(R.id.spnGroup);
+        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, strings);
+        spinner.setAdapter(stringArrayAdapter);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                sectionString = strings[1];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                sectionString = strings[0];
+            }
+        });
+    }
+
+    private void levelController() {
+        final String[] strings = new String[]{"ชั่นปีที่1", "ชั่นปีที่2", "ชั่นปีที่3", "ชั่นปีที่4",};
+        Spinner spinner = getView().findViewById(R.id.spnLevel);
+        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, strings);
+        spinner.setAdapter(stringArrayAdapter);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                levelString = strings[1];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                levelString = strings[0];
+            }
+        });
+
+    }
 
     private void genderController() {
         RadioGroup radioGroup = getView().findViewById(R.id.radGender);
@@ -67,9 +120,24 @@ public class RegisterFragment extends Fragment {
 
     private void createDivision() {
 
-        String[] strings = new String[]{"ชั่นปีที่1", "ชั่นปีที่2", "ชั่นปีที่3", "ชั่นปีที่4",};
+        final String[] strings = new String[]{"Division1", "Division2", "Division3", "Division4",};
+        Spinner spinner = getView().findViewById(R.id.spnDivition);
+        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, strings);
+        spinner.setAdapter(stringArrayAdapter);
 
-        Spinner spinner = getView().findViewById(R.id.spinnerDivision);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                divisionString = strings[1];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                divisionString = strings[0];
+            }
+        });
+
+
     }
 
     private void createToolber() {
@@ -128,8 +196,20 @@ public class RegisterFragment extends Fragment {
                 showAlert("Have Space", "Please Fill All Blank");
             } else if (genderABoolean) {
                 showAlert("Choose Gender ?", "Please Choose Gender Male or Female");
+            } else if (pass.equals(pass2)) {
+                showAlert("Password not Match", "Please Type Password and Re-Password Match");
             } else {
-
+                FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+                firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+//                            ToDo
+                        } else {
+                            showAlert("Cannont Resigter", task.getException().toString());
+                        }
+                    }
+                });
             }
 
         }
