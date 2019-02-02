@@ -196,7 +196,7 @@ public class RegisterFragment extends Fragment {
                 showAlert("Have Space", "Please Fill All Blank");
             } else if (genderABoolean) {
                 showAlert("Choose Gender ?", "Please Choose Gender Male or Female");
-            } else if (pass.equals(pass2)) {
+            } else if (!pass.equals(pass2)) {
                 showAlert("Password not Match", "Please Type Password and Re-Password Match");
             } else {
                 FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();

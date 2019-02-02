@@ -25,7 +25,7 @@
             android:layout_height="match_parent">
 
             <LinearLayout
-                android:padding="30dp"
+                android:paddingBottom="50dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="30dp"
@@ -439,7 +439,7 @@
                     <!--TextField-->
                     <EditText
                         android:id="@+id/edtEmail"
-                        android:inputType="number"
+                        android:inputType="textEmailAddress"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
