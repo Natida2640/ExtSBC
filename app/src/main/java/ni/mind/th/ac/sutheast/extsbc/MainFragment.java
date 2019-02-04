@@ -16,11 +16,11 @@ import android.widget.TextView;
  * A simple {@link Fragment} subclass.
  */
 public class MainFragment extends Fragment {
-Button login ;
 
 
 
-        @Override
+
+    @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 //        Register Controller
