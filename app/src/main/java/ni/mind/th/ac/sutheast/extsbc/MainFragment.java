@@ -10,20 +10,18 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
+
 /**
  * A simple {@link Fragment} subclass.
  */
 public class MainFragment extends Fragment {
 
 
-    public MainFragment() {
-        // Required empty public constructor
-    }
+
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
 //        Register Controller
         TextView textView = getView().findViewById(R.id.textRegister);
         textView.  setOnClickListener(new View.OnClickListener() {
@@ -31,12 +29,13 @@ public class MainFragment extends Fragment {
             public void onClick(View v) {
 //                Replace Fragment
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentMainFragment, new RegisterFragment()).addToBackStack(null).commit();
-
             }
+
         });
 
 
-    }   //Main Method
+    }
+    //Main Method
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,5 +43,6 @@ public class MainFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_main, container, false);
     }
+
 
 }   //Main Class
